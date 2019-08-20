@@ -1,0 +1,669 @@
+{
+	"info": {
+		"_postman_id": "a14b1039-a63d-45cb-8784-beb9ed11728d",
+		"name": "DM124 Trabalhofinal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Entregas",
+			"description": "",
+			"item": [
+				{
+					"name": "GetEntregas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/api/entregas/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"entregas",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetEntregasId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/api/entregas/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"entregas",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EntregasDelete",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "alunoinatel",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "dm124",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"description\":\"Learn Something\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/entregas/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"entregas",
+								"2"
+							]
+						},
+						"description": "PostAuth"
+					},
+					"response": []
+				},
+				{
+					"name": "EntregasPost",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "alunoinatel",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "dm124",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idPedido\": 1,\n    \"idCliente\": \"1234\",\n    \"nomeRecebedor\": \"Nome do recebedor\",\n    \"cpf\": \"cpf recebedor\",\n    \"recebedorComprador\": false,\n    \"dataHora\": 1566238820971,\n    \"localizacao\": \"Localização GPS\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/entregas/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"entregas",
+								""
+							]
+						},
+						"description": "PostAuth"
+					},
+					"response": []
+				},
+				{
+					"name": "EntregasPatch",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "alunoinatel",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "dm124",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idPedido\": 1,\n    \"idCliente\": \"666\",\n    \"nomeRecebedor\": \"Nome do recebedor não interessaa\",\n    \"cpf\": \"555.555.555-55\",\n    \"recebedorComprador\": false,\n    \"dataHora\": 1566239341922,\n    \"localizacao\": \"Localização GPS - GPS desconectado\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/entregas/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"entregas",
+								"2"
+							]
+						},
+						"description": "PostAuth"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cliente",
+			"description": "",
+			"item": [
+				{
+					"name": "ClientPost",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "alunoinatel",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "dm124",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"description\":\"Learn Node.js\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/clients/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clients",
+								""
+							]
+						},
+						"description": "PostAuth"
+					},
+					"response": []
+				},
+				{
+					"name": "ClientGet",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "alunoinatel",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "dm124",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"description\":\"Learn Node.js\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/clients/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clients",
+								""
+							]
+						},
+						"description": "PostAuth"
+					},
+					"response": []
+				},
+				{
+					"name": "ClientGetId",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "alunoinatel",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "dm124",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"description\":\"Learn Node.js\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/clients/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clients",
+								"1"
+							]
+						},
+						"description": "PostAuth"
+					},
+					"response": []
+				},
+				{
+					"name": "ClientPatch",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "alunoinatel",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "dm124",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Nome do Cliente1111\",\n    \"CPF\": \"555.555.555-55\",\n    \"address\": \"Rua dos Bobos Número 0\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/clients/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clients",
+								"1"
+							]
+						},
+						"description": "PostAuth"
+					},
+					"response": []
+				},
+				{
+					"name": "ClientDelete",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "alunoinatel",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "dm124",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Nome do Cliente1111\",\n    \"CPF\": \"555.555.555-55\",\n    \"address\": \"Rua dos Bobos Número 0\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/clients/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clients",
+								"1"
+							]
+						},
+						"description": "PostAuth"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pedido",
+			"description": "",
+			"item": [
+				{
+					"name": "OrderPost",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "alunoinatel",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "dm124",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"idCliente\":1,\n    \"products\": [\n        {\n            \"id\": \"1\",\n            \"quantidade\": 10\n        },\n        {\n            \"id\": \"2\",\n            \"quantidade\": 10\n        }\n    ],\n    \"status\": \"aberto\",\n    \"dataHora\": \"Tue Aug 20 2019 09:19:16 GMT-0300 (Hora oficial do Brasil)\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/orders/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"orders",
+								""
+							]
+						},
+						"description": "PostAuth"
+					},
+					"response": []
+				},
+				{
+					"name": "OrderGet",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "alunoinatel",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "dm124",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"description\":\"Learn Node.js\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/orders/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"orders",
+								""
+							]
+						},
+						"description": "PostAuth"
+					},
+					"response": []
+				},
+				{
+					"name": "OrderPatch",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "alunoinatel",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "dm124",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \n    \"idCliente\":1,\n    \"products\": [\n        {\n            \"id\": \"1\",\n            \"quantidade\": 10\n        },\n        {\n            \"id\": \"2\",\n            \"quantidade\": 10\n        }\n    ],\n    \"status\": \"aberto\",\n    \"dataHora\": \"Qualquer coisa\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/orders/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"orders",
+								"2"
+							]
+						},
+						"description": "PostAuth"
+					},
+					"response": []
+				},
+				{
+					"name": "OrderGetId",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "alunoinatel",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "dm124",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"products\": [\n        {\n            \"id\": \"1\",\n            \"quantidade\": 10\n        },\n        {\n            \"id\": \"2\",\n            \"quantidade\": 10\n        }\n    ],\n    \"status\": \"fechado\",\n    \"dataHora\": \"qualquer coisa\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/orders/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"orders",
+								"3"
+							]
+						},
+						"description": "PostAuth"
+					},
+					"response": []
+				},
+				{
+					"name": "OrderDelete",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "alunoinatel",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "dm124",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"products\": [\n        {\n            \"id\": \"1\",\n            \"quantidade\": 10\n        },\n        {\n            \"id\": \"2\",\n            \"quantidade\": 10\n        }\n    ],\n    \"status\": \"fechado\",\n    \"dataHora\": \"qualquer coisa\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/orders/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"orders",
+								"2"
+							]
+						},
+						"description": "PostAuth"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

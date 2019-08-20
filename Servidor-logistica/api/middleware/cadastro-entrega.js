@@ -1,9 +1,11 @@
 const cadastroEntrega = (idPedido1, idCliente1, next) => {
     const https = require('http')
 
+    let statusCode;
+
     const data = JSON.stringify({
-        idPedido: 666,
-        idCliente: "Teste666"        
+        idPedido: idPedido1,
+        idCliente: idCliente1        
     });
     
     const options = {
@@ -21,19 +23,24 @@ const cadastroEntrega = (idPedido1, idCliente1, next) => {
     
     const req = https.request(options, (res) => {
       console.log(`statusCode: ${res.statusCode}`)
-      //response.status(res.statusCode).send();
+      statusCode = res.statusCode;
+      console.log(`Status code passado: ${statusCode}`);
+
       res.on('data', (d) => {
-        process.stdout.write(d);
+        process.stdout.write(d);        
       });
     });
     
     req.on('error', (error) => {
       console.error(error);
+      return (error);
     });
     
     req.write(data)
-    req.end()
-
+    req.end();
+    
+    console.log(`Status code return: ${statusCode}`)
+    return (statusCode);
    
     //next();
 }

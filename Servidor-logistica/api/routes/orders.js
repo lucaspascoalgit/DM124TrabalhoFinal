@@ -45,62 +45,13 @@ router.get('/', (request, response) => {
     : response.status(204).send();
  });
 
- router.get('/entregas', (request, response) => {
-     
-    cadastroEntrega(666,"Teste666");
-    response.status(201).send();
-    /*
-    const https = require('http')
+ router.get('/entregas', (request, response) => { 
+    
+    //colocar o id do cliente e do pedido dentro de casdastro de entrega 
+    //response.status(cadastroEntrega(666,"Teste666")).send();
+    response.json(cadastroEntrega(666,"Teste666"));
 
-    const data = JSON.stringify({
-        idPedido: 1,
-        idCliente: "1234",
-        nomeRecebedor: "Nome do recebedor",
-        cpf: "cpf recebedor",
-        recebedorComprador: false,
-        dataHora: 1566238820971,
-        localizacao: "Localização GPS"
-    });
-    
-    const options = {
-      hostname: 'localhost',
-      port: 8080,
-      //path: '/api/entregas/semAuth',
-      path: '/api/entregas',
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization':'ZG0xMjQ6YWx1bm9pbmF0ZWw='
-        //'Content-Length': data.length
-      }
-    };
-    
-    const req = https.request(options, (res) => {
-      console.log(`statusCode: ${res.statusCode}`)
-      response.status(res.statusCode).send();
-      res.on('data', (d) => {
-        process.stdout.write(d);
-      });
-    });
-    
-    req.on('error', (error) => {
-      console.error(error);
-    });
-    
-    req.write(data)
-    req.end()
-     //fim post outra api
- /*   const toArray = key => db[key];
-    const orders = Object.keys(db).map(toArray);
-   
-    orders.length
-      ? response.json(orders)
-      : response.status(204).send();*/
    });
- /*
-router.get('/', (request, response) => {
-  response.status(200).json(db);
-});*/
 
 router.get('/:orderId', (request, response) => {
   const order = db[request.params.orderId];
@@ -125,6 +76,11 @@ router.patch('/:orderId', checkAuth, (request, response) => {
     order.products = request.body.products || order.products;
     order.status = request.body.status || order.status;    
     order.dataHora = hasValue ? Date(Date.now()) : order.dataHora;
+
+    if (order.status === "fechado"){
+      cadastroEntrega(order.id,order.idCliente)
+    }
+    
     response.json(order);
   } else {
     notFound(request, response);
