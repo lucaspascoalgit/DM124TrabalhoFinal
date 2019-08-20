@@ -10,96 +10,6 @@
 			"description": "",
 			"item": [
 				{
-					"name": "GetEntregas",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": "http://localhost:8080/api/entregas/",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"entregas",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GetEntregasId",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": "http://localhost:8080/api/entregas/2",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"entregas",
-								"2"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "EntregasDelete",
-					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "alunoinatel",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "dm124",
-									"type": "string"
-								}
-							]
-						},
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"description\":\"Learn Something\"\n}"
-						},
-						"url": {
-							"raw": "http://localhost:8080/api/entregas/2",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"entregas",
-								"2"
-							]
-						},
-						"description": "PostAuth"
-					},
-					"response": []
-				},
-				{
 					"name": "EntregasPost",
 					"request": {
 						"auth": {
@@ -146,6 +56,50 @@
 					"response": []
 				},
 				{
+					"name": "GetEntregas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/api/entregas/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"entregas",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetEntregasId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/api/entregas/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"entregas",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "EntregasPatch",
 					"request": {
 						"auth": {
@@ -172,7 +126,53 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"idPedido\": 1,\n    \"idCliente\": \"666\",\n    \"nomeRecebedor\": \"Nome do recebedor não interessaa\",\n    \"cpf\": \"555.555.555-55\",\n    \"recebedorComprador\": false,\n    \"dataHora\": 1566239341922,\n    \"localizacao\": \"Localização GPS - GPS desconectado\"\n}"
+							"raw": "{\n    \"idPedido\": 1,\n    \"idCliente\": \"666\",\n    \"nomeRecebedor\": \"Nome do recebedor não interessaa\",\n    \"cpf\": \"555.555.555-55\",\n    \"recebedorComprador\": true,\n    \"dataHora\": 1566239341922,\n    \"localizacao\": \"Localização GPS - GPS desconectado\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/entregas/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"entregas",
+								"2"
+							]
+						},
+						"description": "PostAuth"
+					},
+					"response": []
+				},
+				{
+					"name": "EntregasDelete",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "alunoinatel",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "dm124",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"description\":\"Learn Something\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/entregas/2",
@@ -224,7 +224,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"description\":\"Learn Node.js\"\n}"
+							"raw": "{\n    \"name\": \"Nome do Cliente\",\n    \"CPF\": \"555.555.555-55\",\n    \"address\": \"Rua dos Bobos Número 0\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/clients/",
@@ -319,7 +319,7 @@
 							"raw": "{\n\t\"description\":\"Learn Node.js\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/clients/1",
+							"raw": "http://localhost:8080/api/clients/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -328,7 +328,7 @@
 							"path": [
 								"api",
 								"clients",
-								"1"
+								"2"
 							]
 						},
 						"description": "PostAuth"
@@ -362,10 +362,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Nome do Cliente1111\",\n    \"CPF\": \"555.555.555-55\",\n    \"address\": \"Rua dos Bobos Número 0\"\n}"
+							"raw": "{\n    \"name\": \"Nome do Cliente1111\",\n    \"CPF\": \"555.555.555-55\",\n    \"address\": \"Fim do mundo\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/clients/1",
+							"raw": "http://localhost:8080/api/clients/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -374,7 +374,7 @@
 							"path": [
 								"api",
 								"clients",
-								"1"
+								"2"
 							]
 						},
 						"description": "PostAuth"
@@ -411,7 +411,7 @@
 							"raw": "{\n    \"name\": \"Nome do Cliente1111\",\n    \"CPF\": \"555.555.555-55\",\n    \"address\": \"Rua dos Bobos Número 0\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/clients/1",
+							"raw": "http://localhost:8080/api/clients/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -420,7 +420,7 @@
 							"path": [
 								"api",
 								"clients",
-								"1"
+								"2"
 							]
 						},
 						"description": "PostAuth"
@@ -460,7 +460,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 1,\n    \"idCliente\":1,\n    \"products\": [\n        {\n            \"id\": \"1\",\n            \"quantidade\": 10\n        },\n        {\n            \"id\": \"2\",\n            \"quantidade\": 10\n        }\n    ],\n    \"status\": \"aberto\",\n    \"dataHora\": \"Tue Aug 20 2019 09:19:16 GMT-0300 (Hora oficial do Brasil)\"\n}"
+							"raw": "{\n    \"idCliente\":1,\n    \"products\": [\n        {\n            \"id\": \"1\",\n            \"quantidade\": 10\n        },\n        {\n            \"id\": \"2\",\n            \"quantidade\": 10\n        }\n    ],\n    \"status\": \"aberto\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/orders/",
@@ -526,52 +526,6 @@
 					"response": []
 				},
 				{
-					"name": "OrderPatch",
-					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "alunoinatel",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "dm124",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n   \n    \"idCliente\":1,\n    \"products\": [\n        {\n            \"id\": \"1\",\n            \"quantidade\": 10\n        },\n        {\n            \"id\": \"2\",\n            \"quantidade\": 10\n        }\n    ],\n    \"status\": \"aberto\",\n    \"dataHora\": \"Qualquer coisa\"\n}"
-						},
-						"url": {
-							"raw": "http://localhost:8080/api/orders/2",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"orders",
-								"2"
-							]
-						},
-						"description": "PostAuth"
-					},
-					"response": []
-				},
-				{
 					"name": "OrderGetId",
 					"request": {
 						"auth": {
@@ -599,6 +553,52 @@
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"products\": [\n        {\n            \"id\": \"1\",\n            \"quantidade\": 10\n        },\n        {\n            \"id\": \"2\",\n            \"quantidade\": 10\n        }\n    ],\n    \"status\": \"fechado\",\n    \"dataHora\": \"qualquer coisa\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/orders/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"orders",
+								"3"
+							]
+						},
+						"description": "PostAuth"
+					},
+					"response": []
+				},
+				{
+					"name": "OrderPatch",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "alunoinatel",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "dm124",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \n    \"idCliente\":3,\n    \"products\": [\n        {\n            \"id\": \"1\",\n            \"quantidade\": 10\n        },\n        {\n            \"id\": \"2\",\n            \"quantidade\": 10\n        }\n    ],\n    \"status\": \"fechado\",\n    \"dataHora\": \"Qualquer coisa\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/orders/3",
@@ -647,7 +647,7 @@
 							"raw": "{\n    \"products\": [\n        {\n            \"id\": \"1\",\n            \"quantidade\": 10\n        },\n        {\n            \"id\": \"2\",\n            \"quantidade\": 10\n        }\n    ],\n    \"status\": \"fechado\",\n    \"dataHora\": \"qualquer coisa\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/orders/2",
+							"raw": "http://localhost:8080/api/orders/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -656,7 +656,7 @@
 							"path": [
 								"api",
 								"orders",
-								"2"
+								"1"
 							]
 						},
 						"description": "PostAuth"

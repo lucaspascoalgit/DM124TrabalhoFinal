@@ -5,7 +5,7 @@ const checkAuth = require('../middleware/check-auth');
 const notFound = require('../middleware/not-found');
 const cadastroEntrega = require('../middleware/cadastro-entrega');
 
-//const app = require('../../app');
+
 
 let db = {};
 let sequence = 0;
@@ -45,13 +45,6 @@ router.get('/', (request, response) => {
     : response.status(204).send();
  });
 
- router.get('/entregas', (request, response) => { 
-    
-    //colocar o id do cliente e do pedido dentro de casdastro de entrega 
-    //response.status(cadastroEntrega(666,"Teste666")).send();
-    response.json(cadastroEntrega(666,"Teste666"));
-
-   });
 
 router.get('/:orderId', (request, response) => {
   const order = db[request.params.orderId];
@@ -59,13 +52,7 @@ router.get('/:orderId', (request, response) => {
     ? response.json(order)
     : notFound(request, response)
  });
- /*
-router.get('/:taskId', (request, response) => {
-  const id = request.params.taskId;
-  response.status(200).json({
-    message: `Task with ID = ${id} was fetched`
-  });
-});*/
+
 
 router.patch('/:orderId', checkAuth, (request, response) => {
   const order = db[request.params.orderId];
@@ -80,20 +67,13 @@ router.patch('/:orderId', checkAuth, (request, response) => {
     if (order.status === "fechado"){
       cadastroEntrega(order.id,order.idCliente)
     }
-    
+
     response.json(order);
   } else {
     notFound(request, response);
   }
 });
- 
-/*
-router.patch('/:taskId', checkAuth, (request, response) => {
-  const id = request.params.taskId;
-  response.status(200).json({
-    message: `Task with ID = ${id} was updated`
-  });
-});*/
+
 
 router.delete('/:orderId', checkAuth, (request, response) => {
   const order = db[request.params.orderId];
@@ -107,12 +87,5 @@ router.delete('/:orderId', checkAuth, (request, response) => {
   }
  });
  
-/*
-router.delete('/:taskId', checkAuth, (request, response) => {
-  const id = request.params.taskId;
-  response.status(200).json({
-    message: `Task with ID = ${id} was deleted`
-  });
-});*/
 
 module.exports = router;

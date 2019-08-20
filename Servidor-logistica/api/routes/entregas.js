@@ -63,10 +63,7 @@ router.get('/', (request, response) => {
     ? response.json(entregas)
     : response.status(204).send();
  });
- /*
-router.get('/', (request, response) => {
-  response.status(200).json(db);
-});*/
+
 
 router.get('/:entregaId', (request, response) => {
   const entrega = db[request.params.entregaId];
@@ -74,13 +71,7 @@ router.get('/:entregaId', (request, response) => {
     ? response.json(entrega)
     : notFound(request, response)
  });
- /*
-router.get('/:taskId', (request, response) => {
-  const id = request.params.taskId;
-  response.status(200).json({
-    message: `Task with ID = ${id} was fetched`
-  });
-});*/
+
 
 router.patch('/:entregaId', checkAuth, (request, response) => {
   const entrega = db[request.params.entregaId];
@@ -100,13 +91,6 @@ router.patch('/:entregaId', checkAuth, (request, response) => {
   }
 });
  
-/*
-router.patch('/:taskId', checkAuth, (request, response) => {
-  const id = request.params.taskId;
-  response.status(200).json({
-    message: `Task with ID = ${id} was updated`
-  });
-});*/
 
 router.delete('/:entregaId', checkAuth, (request, response) => {
   const entrega = db[request.params.entregaId];
@@ -120,12 +104,5 @@ router.delete('/:entregaId', checkAuth, (request, response) => {
   }
  });
  
-/*
-router.delete('/:taskId', checkAuth, (request, response) => {
-  const id = request.params.taskId;
-  response.status(200).json({
-    message: `Task with ID = ${id} was deleted`
-  });
-});*/
 
 module.exports = router;
